@@ -47,4 +47,21 @@ class ReportController extends Controller
         // dd($countries);
         return view('listingCountries')->with('countries',$countries);
     }
+
+    //Listing Petroleum Product sales average
+    public function ListingPetroleumAverage(){
+        $avg7_10 = DB::select('Select Petroleum_product, avg(sale) as avgSale 
+        from reports 
+        where (sale != 0)
+        AND (year BETWEEN 2007 AND 2010)  
+        GROUP by Petroleum_product');
+        $avg11_14 = DB::select('Select Petroleum_product, avg(sale) as avgSale 
+        from reports 
+        where (sale != 0)
+        AND (year BETWEEN 2011 AND 2014)  
+        GROUP by Petroleum_product');
+        $avgTotalSale = [$avg7_10, $avg11_14];
+        // dd($avgTotalSale);
+        return view('listingPetroleumAverage')->with('avgTotalSale', $avgTotalSale);
+    }
 }
