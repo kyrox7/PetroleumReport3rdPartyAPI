@@ -34,8 +34,8 @@ class ReportController extends Controller
 
     //Listing Total Sales of each petroleum product
     public function ListingTotalSales(){
-        $countPetrol = Report::all();
-        return view('totalSales')->with('countPetrol', $countPetrol);
+        $totalSales = Report::all();
+        return view('totalSales')->with('totalSales', $totalSales);
 
     }
 }
