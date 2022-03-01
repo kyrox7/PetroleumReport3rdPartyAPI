@@ -8,12 +8,11 @@ use Illuminate\Support\Facades\Http;
 
 class ReportController extends Controller
 {
-    // public function index(){
-    //     $collection = Http::get("https://raw.githubusercontent.com/younginnovations/internship-challenges/master/programming/petroleum-report/data.json")->collect();
-    //     return view('OverallData',['collection' => $collection]);
-    // }
-
+    //Fetching data from API and storing in database
     public function store(){
+        
+        $checkingData = Report::all()->count();
+        if($checkingData == 0 ){
         $collection = Http::get("https://raw.githubusercontent.com/younginnovations/internship-challenges/master/programming/petroleum-report/data.json")->collect();
         foreach($collection as $item){
             $report = new Report;
@@ -23,6 +22,20 @@ class ReportController extends Controller
             $report->country = $item['country'];
             $report->save();
         }
+        $totalDataDisplay = Report::all();
+        return view('DisplayOverallData')->with('totalDataDisplay', $totalDataDisplay);
+        
+    }else{
+        $totalDataDisplay = Report::all();
+        return view('DisplayOverallData')->with('totalDataDisplay', $totalDataDisplay);
+    }
+
+    }
+
+    //Listing Total Sales of each petroleum product
+    public function ListingTotalSales(){
+        $countPetrol = Report::all();
+        return view('totalSales')->with('countPetrol', $countPetrol);
 
     }
 }
