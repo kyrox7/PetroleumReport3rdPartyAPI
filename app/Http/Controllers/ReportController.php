@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Report;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
@@ -37,5 +39,12 @@ class ReportController extends Controller
         $totalSales = Report::all();
         return view('totalSales')->with('totalSales', $totalSales);
 
+    }
+
+    //Listing Countries
+    public function ListingCountries(){
+        $countries = DB::select('Select Country, sum(sale) as totalSale from reports  group by Country order By totalSale DESC');
+        // dd($countries);
+        return view('listingCountries')->with('countries',$countries);
     }
 }
