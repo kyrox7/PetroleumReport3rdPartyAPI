@@ -13,7 +13,9 @@ use App\Http\Controllers\ReportController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function(){
+    return view('base');
+});
 Route::get('/listingTotalSales',[ReportController::class, 'ListingTotalSales'])->name('ListingTotalSales');
 Route::get('/listingCountries',[ReportController::class, 'ListingCountries'])->name('ListingCountries');
 Route::get('/listingPetroleumAverage',[ReportController::class, 'ListingPetroleumAverage'])->name('ListingPetroleumAverage');
