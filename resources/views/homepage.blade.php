@@ -3,11 +3,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base File</title>
+    <title>Document</title>
     <style>
-      table{
-        margin-left:50;
-      }
        ul {
   list-style-type: none;
   margin: 0;
@@ -37,10 +34,7 @@ li a:hover {
 </head>
 <body>
 <ul>
-  <li><a href="{{ route('OverallData') }}">Viewing Overall Data</a></li>  
-  <li><a href="{{ route('ListingTotalSales') }}">Total Sales of Each Petroleum Product</a></li>
-  <li><a href="{{ route('ListingCountries') }}">Top 3 Countries according to Petroleum Product</a></li>
-  <li><a href="{{ route('ListingPetroleumAverage') }}">Average sales of each petroleum product</a></li>
+  <li><a href="{{ route('OverallData') }}">Click Here to Fetch data and store in database</a></li>
 </ul>
 </body>
 </html>

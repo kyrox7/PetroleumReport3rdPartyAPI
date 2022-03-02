@@ -7,6 +7,7 @@
     <title>Average Total Sale of 4 Year Intervals</title>
 </head>
 <body>
+    <h1>This is average sales of each petroleum product on the interval of 4 years.</h1>
     @php
         $maxValue = 8;
         $avg7_10 = $avgTotalSale[0];

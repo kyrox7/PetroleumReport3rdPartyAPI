@@ -7,6 +7,7 @@
     <title>Total Sales</title>
 </head>
 <body>
+    <h1>This is Total Sales of each petroleum product</h1>
     @php
     $totalPetrol = 0;
     $totalDiesel = 0;

@@ -14,7 +14,7 @@ use App\Http\Controllers\ReportController;
 |
 */
 Route::get('/', function(){
-    return view('base');
+    return view('homepage');
 });
 Route::get('/listingTotalSales',[ReportController::class, 'ListingTotalSales'])->name('ListingTotalSales');
 Route::get('/listingCountries',[ReportController::class, 'ListingCountries'])->name('ListingCountries');

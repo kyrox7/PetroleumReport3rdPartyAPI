@@ -7,6 +7,7 @@
     <title>Total Data Display</title>
 </head>
 <body>
+    <h1>This is overall data fetched from database</h1>
     <table border="2">
         <tr>
             <th>ID</th>
